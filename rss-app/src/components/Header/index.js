@@ -2,17 +2,23 @@ import React from 'react';
 import './index.css';
 import Navbar from '../Navbar';
 import Searchbar from '../Searchbar';
+import Wrap from '../Wrap';
 
 export default () => (
   <div className="header">
-    <div className="wrap">
-      <div className="navbar-wrap">
-        <Navbar />
+    {/* <div className="wrap"> */}
+    <Wrap>
+      <div className="header-wrap">
+        <div className="navbar-wrap">
+          <Navbar />
+        </div>
+        <div className="searchbar-wrap">
+          <Searchbar />
+        </div>
       </div>
-      <div className="searchbar-wrap">
-        <Searchbar />
-      </div>
-      {/* <div className="navbar-wrap"><Navbar /></div> */}
-    </div>
+    </Wrap>
+
+    {/* <div className="navbar-wrap"><Navbar /></div> */}
+    {/* </div> */}
   </div>
 );

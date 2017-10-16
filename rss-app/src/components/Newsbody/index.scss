@@ -1,0 +1,9 @@
+@import '../../styles/index.scss';
+
+.content {
+  width: 100%;
+  .content-title-wrap {
+    height: 200px;
+    @include flex-center();
+  }
+}

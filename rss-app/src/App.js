@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Newsbody from './components/Newsbody';
 
 class App extends Component {
   render() {
@@ -10,9 +11,11 @@ class App extends Component {
           <Header />
         </div>
         <div>
-          {window.location.pathname === '/favorite'
-            ? 'Favorite here'
-            : 'News here'}
+          {window.location.pathname === '/favorite' ? (
+            'Favorite here'
+          ) : (
+            <Newsbody />
+          )}
         </div>
       </div>
     );

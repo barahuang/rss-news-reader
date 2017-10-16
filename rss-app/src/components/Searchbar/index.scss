@@ -1,7 +1,10 @@
+@import '../../styles/index.scss';
+
 .searchbar {
+  cursor: pointer;
   input {
     &::-webkit-input-placeholder {
-      color: #9b9b9b;
+      color: $darker-grey;
       text-align: center;
     }
     width: 25vw;
@@ -9,12 +12,25 @@
     height: 30px;
     border-radius: 10px;
     border: none;
-    background-color: #f3f3f3;
+    background-color: $lighter-grey;
     color: #000;
     padding: 0 10px;
   }
-  img {
-    vertical-align: middle;
-    margin: 0 5px;
+  .search-icon {
+    padding: 5px;
+    &:hover {
+      svg {
+        #search-icon {
+          fill: $blue;
+        }
+      }
+    }
+    svg {
+      vertical-align: middle;
+      #search-icon {
+        transition: 200ms;
+        transition-timing-function: ease-in-out;
+      }
+    }
   }
 }
