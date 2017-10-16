@@ -1,3 +1,10 @@
 a {
-  text-decoration: none;
+  &:hover,
+  &:active,
+  &:visited,
+  &,
+  link {
+    color: initial;
+    text-decoration: none;
+  }
 }

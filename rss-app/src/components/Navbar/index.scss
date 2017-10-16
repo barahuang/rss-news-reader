@@ -1,5 +1,36 @@
+@import '../../styles/mixins.scss';
+
 .navbar {
-  .selected {
-    color: green;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  .active {
+    &:after {
+      content: '';
+      float: left;
+      background: #2821c6;
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      margin-top: 2px;
+    }
+  }
+  .navbar-gap-sm {
+    width: 5px;
+  }
+  .navbar-gap-md {
+    width: 70px;
+  }
+  .tag-update {
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #d0021b;
+    color: white;
+    width: 20px;
+    height: 20px;
+    @include flex-center();
   }
 }
