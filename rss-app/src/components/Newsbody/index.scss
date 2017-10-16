@@ -6,4 +6,10 @@
     height: 200px;
     @include flex-center();
   }
+  .content-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 14px;
+  }
 }
