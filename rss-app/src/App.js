@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Newsbody from './components/Newsbody';
+import Readingbody from './components/Readingbody';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
         </div>
         <div>
           {window.location.pathname === '/favorite' ? (
-            'Favorite here'
+            <Readingbody />
           ) : (
             <Newsbody />
           )}
