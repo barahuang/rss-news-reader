@@ -4,7 +4,7 @@ import Text from '../Text';
 
 export default ({ content }) => (
   <div className="title-wrap">
-    <div class="title">
+    <div className="title">
       <Text content={content} />
     </div>
   </div>

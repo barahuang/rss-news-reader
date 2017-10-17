@@ -16,46 +16,55 @@ export default () => (
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
           <Card
             tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
             title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
             author="Katie Decker"
+            imgUrl="./test.png"
           />
         </div>
       </div>
