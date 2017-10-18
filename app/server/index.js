@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 var parser = require('rss-parser');
-const url = 'https://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss';
+const url = 'https://newyorkbuzz.org/feed/';
 const options = {
   customFields: {
     feed: [['generator', 'author'], ['content:encoded', 'content']],

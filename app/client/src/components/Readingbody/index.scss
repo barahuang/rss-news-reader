@@ -1,1 +1,14 @@
+@import '../../styles/index.scss';
 
+.reading-wrapper {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+.reading-left {
+  padding: 0 40px;
+}
+.reading-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
