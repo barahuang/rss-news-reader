@@ -9,11 +9,14 @@
     font-size: 20px;
     line-height: 1.3;
     font-weight: bold;
+    margin-bottom: 10px;
   }
   .article-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 45px;
     line-height: 1.2;
     font-weight: bold;
+    margin-bottom: 13px;
   }
   .article-author {
     font-family: 'Crimson Text', serif;
@@ -23,5 +26,6 @@
     width: max-content;
     @include flex-center;
     text-transform: uppercase;
+    background-color: #000;
   }
 }

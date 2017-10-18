@@ -1,0 +1,17 @@
+@import '../../styles/index.scss';
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
+.article-content-wrapper {
+  font-family: 'Crimson Text', serif;
+  width: 860px;
+  font-size: 22px;
+  color: #000;
+  line-height: 1.58;
+  margin: 20px 0;
+  word-wrap: normal;
+
+  //a {
+  //   text-decoration: none;
+  //   border-bottom: 1px solid #e8e8e8;
+  // }
+}
