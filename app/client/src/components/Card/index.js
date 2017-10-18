@@ -13,6 +13,11 @@ const imageStyle = url => ({
   backgroundPosition: 'center'
 });
 
+const tagstyle = () => ({
+  whiteSpace: 'nowrap',
+  textTransform: 'capitalize'
+});
+
 export default ({
   index,
   tags,
@@ -33,8 +38,7 @@ export default ({
       <div className="card-tag">
         {tags.map((tag, i) => (
           <span key={i}>
-            {i === 0 ? '' : ' // '}{' '}
-            <span style={{ whiteSpace: 'nowrap' }}>{tag}</span>
+            {i === 0 ? '' : ' // '} <span style={tagstyle()}>{tag}</span>
           </span>
         ))}
       </div>

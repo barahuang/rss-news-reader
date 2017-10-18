@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 
 var parser = require('rss-parser');
-const url = 'https://newyorkbuzz.org/feed/';
+const url = 'https://blogs.esri.com/esri/arcgis/feed';
 const options = {
   customFields: {
     feed: [['generator', 'author'], ['content:encoded', 'content']],
