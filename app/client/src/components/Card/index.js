@@ -12,13 +12,31 @@ const imageStyle = url => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center'
 });
-export default ({ tag, title, author, ifnew, imgUrl }) => (
+
+export default ({
+  index,
+  tags,
+  title,
+  author,
+  ifnew,
+  imgUrl,
+  content,
+  goRead
+}) => (
   <div
     className={`card-wrapper card-overlay-${indexNum()}`}
-    style={imageStyle(imgUrl)}
+    style={imgUrl ? imageStyle(imgUrl) : {}}
+    onClick={() => goRead(index)}
   >
     <div className="card-content-wrapper">
-      <div className="card-tag">{tag}</div>
+      <div className="card-tag">
+        {tags.map((tag, i) => (
+          <span key={i}>
+            {i === 0 ? '' : ' // '}{' '}
+            <span style={{ whiteSpace: 'nowrap' }}>{tag}</span>
+          </span>
+        ))}
+      </div>
       <div className="card-title">{title}</div>
       <div className="card-content-bottom">
         <div className="card-author">{author}</div>

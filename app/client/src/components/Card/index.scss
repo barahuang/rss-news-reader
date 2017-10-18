@@ -6,6 +6,7 @@
   height: 406px;
   border-radius: 5px;
   @include flex-center;
+  cursor: pointer;
   .card-content-wrapper {
     z-index: 1;
     width: 350px;

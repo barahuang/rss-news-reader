@@ -1,41 +1,56 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Newsbody from './components/Newsbody';
-// import Readingbody from './components/Readingbody';
+import NewsBody from './components/NewsBody';
+import ReadingBody from './components/ReadingBody';
 
 class App extends Component {
-  state = { users: [] };
+  constructor() {
+    super();
+
+    this.state = { isReading: false, indexOfFeed: -1, feeds: [] };
+
+    this.goRead = this.goRead.bind(this);
+  }
+
+  goRead(index) {
+    this.setState({ isReading: true, indexOfFeed: index });
+  }
 
   componentDidMount() {
-    fetch('https://localhost:3001/users')
-      // fetch('https://baconipsum.com/api/?type=meat-and-filler')
-      .then(users => console.log(users.json()))
-      .catch(e => console.log(e));
+    fetch('http://localhost:3001/feed')
+      .then(res => res.json())
+      .then(feedData => this.setState({ feeds: feedData.feed.entries }))
+      .catch(e => console.error('Failed:', e));
   }
 
   render() {
+    console.dir(this.state.feeds);
     return (
       <div className="App">
-        {/* {this.state.users.map(user => (
-          <div key={user.id}>{user.username}</div>
-        ))}{' '} */}
-
         <div>
           <Header />
         </div>
-        <div>
-          <Newsbody />
-          {/* {window.location.pathname === '/favorite' ? (
-            <Newsbody />
+        {this.state.isReading ? (
+          <ReadingBody
+            feeds={this.state.feeds}
+            index={this.state.indexOfFeed}
+          />
+        ) : (
+          <NewsBody feeds={this.state.feeds} goRead={this.goRead} />
+        )}
+        {/* <div>
+          <NewsBody feeds={this.state.feeds} />
+          {window.location.pathname === '/favorite' ? (
+            <NewsBody />
           ) : (
             {
               this: state.users.map(user => (
                 <div key={user.id}>{user.username}</div>
               ))
             }
-          )} */}
-        </div>
+          )}
+        </div> */}
       </div>
     );
   }

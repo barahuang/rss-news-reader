@@ -4,7 +4,7 @@ import Title from '../Title';
 import Wrap from '../Wrap';
 import Card from '../Card';
 
-export default () => (
+export default ({ feeds, goRead }) => (
   <div className="content">
     <Wrap>
       <div className="wrapper">
@@ -12,60 +12,17 @@ export default () => (
           <Title content="News" />
         </div>
         <div className="content-body">
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
-          <Card
-            tag="Developer / Editing / Geodata / 3D GIS / Analysis & GeoProcessing"
-            title="Live from 2017 GeoConX: Startups Help Utilities and Telecoms Prepare for the Future"
-            author="Katie Decker"
-            imgUrl="./test.png"
-          />
+          {feeds.map((feed, index) => (
+            <Card
+              key={index}
+              index={index}
+              tags={feed.categories}
+              title={feed.title}
+              author={feed.author}
+              content={feed.contentHtml}
+              goRead={goRead}
+            />
+          ))}
         </div>
       </div>
     </Wrap>

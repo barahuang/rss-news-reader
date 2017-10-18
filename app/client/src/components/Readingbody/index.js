@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import Article from '../Article';
 
-export default () => (
+export default ({ feeds, index }) => (
   <Article
     tag="Apps"
     title="Operations Dashboard for ArcGIS Beta – October Update"
