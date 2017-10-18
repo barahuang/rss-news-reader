@@ -35,16 +35,23 @@
       display: grid;
       grid-template-columns: auto 1fr;
       height: 20px;
-      .card-author {
+      .card-info {
         width: max-content;
         padding: 0 18px;
+        background-color: #000;
         font-family: 'Crimson Text', serif;
         color: #fff;
-        text-transform: uppercase;
         font-weight: 400;
-        background-color: #000;
         @include flex-center;
+        .card-author {
+          text-transform: uppercase;
+          padding-right: 8px;
+        }
+        .card-date {
+          padding-left: 8px;
+        }
       }
+
       .ifnew {
         background-color: $blue;
       }

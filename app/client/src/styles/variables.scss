@@ -11,6 +11,7 @@ $card-overlay-colors: #091c85, #250d47, #053755, #164866, #08045c, #0091ea;
       height: 100%;
       z-index: 0;
       background-color: rgba(nth($card-overlay-colors, $i), 0.5);
+      border-radius: 5px;
     }
   }
 }

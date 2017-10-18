@@ -21,6 +21,7 @@ export default ({ feeds, goRead }) => (
               author={feed.author}
               content={feed.contentHtml}
               goRead={goRead}
+              date={feed.pubDate}
             />
           ))}
         </div>

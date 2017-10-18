@@ -21,7 +21,8 @@ export default ({
   ifnew,
   imgUrl,
   content,
-  goRead
+  goRead,
+  date
 }) => (
   <div
     className={`card-wrapper card-overlay-${indexNum()}`}
@@ -39,7 +40,12 @@ export default ({
       </div>
       <div className="card-title">{title}</div>
       <div className="card-content-bottom">
-        <div className="card-author">{author}</div>
+        <div className="card-info">
+          {/* <span className="card-author">{author} </span> */}
+          <span className="card-author">Alex Thoms</span>
+          &middot;
+          <span className="card-date">{date}</span>
+        </div>
         <div className="ifnew">{ifnew}</div>
       </div>
     </div>
