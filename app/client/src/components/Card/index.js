@@ -43,8 +43,7 @@ export default ({
       <div className="card-title">{title}</div>
       <div className="card-content-bottom">
         <div className="card-info">
-          {/* <span className="card-author">{author} </span> */}
-          <span className="card-author">Alex Thoms</span>
+          <span className="card-author">{author} </span>
           &middot;
           <span className="card-date">{date}</span>
         </div>

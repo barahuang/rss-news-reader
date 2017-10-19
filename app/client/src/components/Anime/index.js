@@ -13,26 +13,55 @@ const getAnimationOptions = name => {
         translateY: 50,
         direction: 'alternate'
       };
-    case 'ss':
+    case 'mi':
       return {
-        translateY: function(el, i) {
-          return 50 + -50 * i;
-        },
-        scale: function(el, i, l) {
-          return l - i + 0.25;
-        },
-        rotate: function() {
-          return anime.random(-360, 360);
+        scale: 1.2,
+        duration: 800,
+        elasticity: 400,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2
+      };
+
+    case 'mo':
+      return {
+        scale: 1.0,
+        duration: 600,
+        elasticity: 300
+      };
+
+    case 'mi2':
+      return {
+        display: 'none',
+        easing: 'easeOutElastic'
+      };
+    case 'mo2':
+      return {
+        display: 'block',
+        easing: 'easeOutElastic'
+      };
+
+    case 'flyin':
+      return {
+        translateX: 250,
+        direction: 'alternate',
+        loop: true,
+        delay: function(el, i) {
+          return 1000 + i * 1000;
         }
       };
+
     default:
       return {};
   }
 };
 
 export default (target, animationName) => {
+  anime.remove(target);
   anime({
     ...getAnimationOptions(animationName),
-    targets: target
+    targets: target,
+    easing: 'easeOutElastic'
   });
 };
