@@ -3,7 +3,7 @@ import './index.css';
 
 const indexNum = () => {
   const minNum = 1;
-  const maxNum = 6;
+  const maxNum = 19;
   return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 };
 
@@ -38,7 +38,7 @@ export default ({
       <div className="card-tag">
         {tags.map((tag, i) => (
           <span key={i}>
-            {i === 0 ? '' : ' // '} <span style={tagstyle()}>{tag}</span>
+            {i === 0 ? '' : ' / '} <span style={tagstyle()}>{tag}</span>
           </span>
         ))}
       </div>
