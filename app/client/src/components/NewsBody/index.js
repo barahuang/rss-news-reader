@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 import Title from '../Title';
 import Wrap from '../Wrap';
 import Card from '../Card';
 
-export default ({ feeds, goRead }) => (
+export default ({ feeds }) => (
   <div className="content">
     <Wrap>
       <div className="wrapper">
@@ -13,16 +14,16 @@ export default ({ feeds, goRead }) => (
         </div>
         <div className="content-body">
           {feeds.map((feed, index) => (
-            <Card
-              key={index}
-              index={index}
-              tags={feed.categories}
-              title={feed.title}
-              author={feed.author}
-              content={feed.contentHtml}
-              goRead={goRead}
-              date={feed.pubDate}
-            />
+            <Link to={`/reading?i=${index}`} key={index}>
+              <Card
+                index={index}
+                tags={feed.categories}
+                title={feed.title}
+                author={feed.author}
+                content={feed.contentHtml}
+                date={feed.pubDate}
+              />
+            </Link>
           ))}
         </div>
       </div>

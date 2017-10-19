@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import NewsBody from './components/NewsBody';
@@ -8,13 +9,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { isReading: false, indexOfFeed: -1, feeds: [] };
-
-    this.goRead = this.goRead.bind(this);
-  }
-
-  goRead(index) {
-    this.setState({ isReading: true, indexOfFeed: index });
+    this.state = { isReading: false, indexOfFeed: 0, feeds: [] };
   }
 
   componentDidMount() {
@@ -23,34 +18,18 @@ class App extends Component {
       .then(feedData => this.setState({ feeds: feedData.feed.entries }))
       .catch(e => console.error('Failed:', e));
   }
-
+  newsBody = () => <NewsBody feeds={this.state.feeds} goRead={this.goRead} />;
+  favorite = () => <div>Here is the favorite. Coming soon...</div>;
+  readingBody = () => <ReadingBody feeds={this.state.feeds} />;
   render() {
-    console.dir(this.state.feeds);
     return (
       <div className="App">
         <div>
           <Header />
         </div>
-        {this.state.isReading ? (
-          <ReadingBody
-            feeds={this.state.feeds}
-            index={this.state.indexOfFeed}
-          />
-        ) : (
-          <NewsBody feeds={this.state.feeds} goRead={this.goRead} />
-        )}
-        {/* <div>
-          <NewsBody feeds={this.state.feeds} />
-          {window.location.pathname === '/favorite' ? (
-            <NewsBody />
-          ) : (
-            {
-              this: state.users.map(user => (
-                <div key={user.id}>{user.username}</div>
-              ))
-            }
-          )}
-        </div> */}
+        <Route path="/" exact={true} component={this.newsBody} />
+        <Route path="/reading" exact={true} component={this.readingBody} />
+        <Route path="/favorite" exact={true} component={this.favorite} />
       </div>
     );
   }

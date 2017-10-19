@@ -26,13 +26,11 @@ export default ({
   ifnew,
   imgUrl,
   content,
-  goRead,
   date
 }) => (
   <div
     className={`card-wrapper card-overlay-${indexNum()}`}
     style={imgUrl ? imageStyle(imgUrl) : {}}
-    onClick={() => goRead(index)}
   >
     <div className="card-content-wrapper">
       <div className="card-tag">

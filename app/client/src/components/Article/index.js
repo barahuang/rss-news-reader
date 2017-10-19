@@ -12,7 +12,7 @@ const colorNum = colornum => {
   return colornum <= colorcount ? colornum : colorcount - colornum % colorcount;
 };
 
-export default ({ tags, title, author, content }) => (
+export default ({ tags, title, author, content, date }) => (
   <div className="article-wrapper">
     <div className="article-tag">
       {tags.map((tag, i) => (
