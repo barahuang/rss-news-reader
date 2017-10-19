@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import anime from 'animejs';
+import anime from '../Anime';
 import './index.css';
 import Title from '../Title';
 import Wrap from '../Wrap';
@@ -9,7 +11,11 @@ export default ({ feeds }) => (
   <div className="content">
     <Wrap>
       <div className="wrapper">
-        <div className="content-title-wrap">
+        <div
+          id="XXX"
+          className="content-title-wrap"
+          onClick={() => anime('#XXX', 'ss')}
+        >
           <Title content="News" />
         </div>
         <div className="content-body">

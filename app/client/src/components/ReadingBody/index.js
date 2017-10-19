@@ -9,7 +9,6 @@ const getCurrentIndex = () => {
 
 export default ({ feeds }) => {
   const currentFeed = feeds[getCurrentIndex()];
-  console.log(currentFeed);
   return (
     <div className="reading-wrapper">
       <div className="reading-left">
