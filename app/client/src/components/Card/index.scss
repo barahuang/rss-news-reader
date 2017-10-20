@@ -7,6 +7,7 @@
   border-radius: 5px;
   @include flex-center;
   cursor: pointer;
+  background-color: #ddd;
   .card-content-wrapper {
     z-index: 1;
     width: 350px;
