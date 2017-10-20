@@ -24,6 +24,7 @@ export default ({ feeds }) => {
             author={currentFeed.author}
             content={currentFeed.contentHtml}
             date={currentFeed.pubDate}
+            index={getCurrentIndex()}
           />
         </div>
       )}

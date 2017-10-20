@@ -12,9 +12,14 @@ const colorNum = colornum => {
   return colornum <= colorcount ? colornum : colorcount - colornum % colorcount;
 };
 
-export default ({ tags, title, author, content, date }) => (
+export default ({ index, tags, title, author, content, date }) => (
   <div className="article-wrapper">
-    <div className="article-tag">
+    <div
+      className="article-tag"
+      id={`tag-${index}`}
+      /* onMouseEnter={() => anime(`#tag-${index}`, 'tagon')}
+      onMouseLeave={() => anime(`#tag-${index}`, 'tagoff')} */
+    >
       {tags.map((tag, i) => (
         <span key={i} className={`tag-colors-${colorNum(i + 1)}`}>
           {i === 0 ? '' : ' / '} <span style={tagstyle()}>{tag}</span>

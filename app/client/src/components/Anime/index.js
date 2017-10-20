@@ -52,6 +52,38 @@ const getAnimationOptions = name => {
         }
       };
 
+    case 'tagon':
+      return {
+        height: '100px',
+        duration: 200,
+        elasticity: 300
+      };
+    case 'tagoff':
+      return {
+        height: '30px',
+        duration: 200,
+        elasticity: 300
+      };
+    case 'fontin':
+      return {
+        translateX: 250,
+        direction: 'alternate',
+        loop: true
+        // duration: function(el, i, l) {
+        //   return 1000 + i * 1000;
+        // }
+      };
+
+    case 'fontout':
+      return {
+        translateX: -250,
+        direction: 'alternate',
+        loop: true
+        // duration: function(el, i) {
+        //   return 1000 + i * 1000;
+        // }
+      };
+
     default:
       return {};
   }
