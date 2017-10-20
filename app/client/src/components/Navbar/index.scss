@@ -1,7 +1,6 @@
 @import '../../styles/index.scss';
 
 .navbar {
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 18px;
   display: flex;
@@ -24,6 +23,7 @@
   .navbar-gap-md {
     width: 70px;
   }
+
   .tag-update {
     font-size: 14px;
     border-radius: 5px;

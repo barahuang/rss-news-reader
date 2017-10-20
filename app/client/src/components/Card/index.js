@@ -38,6 +38,7 @@ export default ({
     className={`card-wrapper card-overlay-${indexNum()}`}
     style={imgUrl ? imageStyle(imgUrl) : {}}
   >
+    <div className="position" />
     <div className="card-content-wrapper">
       <div className="card-tag">
         {tags.map((tag, i) => (

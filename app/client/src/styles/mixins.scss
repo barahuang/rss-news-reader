@@ -3,3 +3,31 @@
   justify-content: center;
   align-items: center;
 }
+
+$xs: 320px;
+$md: 720px;
+$lg: 1024px;
+$xl: 1440px;
+
+@mixin respond-to($media) {
+  @if $media == phone320 {
+    @media screen and (max-width: $xs) {
+      @content;
+    }
+  } @else if $media == tablets1024 {
+    //tablet landscape
+    @media screen and (max-width: $lg) {
+      @content;
+    }
+  } @else if $media == desktopHD1440 {
+    //desktop HD
+    @media screen and (max-width: $xl) {
+      @content;
+    }
+  } @else if $media == desktopHDXL1440 {
+    //Larger than desktop HD
+    @media screen and (min-width: $xl) {
+      @content;
+    }
+  }
+}

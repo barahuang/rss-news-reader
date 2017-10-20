@@ -1,7 +1,35 @@
+@import '../../styles/index.scss';
 .wrap {
-  width: 100%;
   max-width: 1240px;
-  height: 100%;
   margin: 0 auto;
+  position: relative;
   padding: 0 100px;
+  height: 100%;
+
+  /* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+  /*
+Note: The best way to structure the use of media queries is to create the queries 
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it 
+there. 
+*/
+
+  @include respond-to(phone320) {
+    max-width: 411px;
+    width: 100%;
+    padding: 0 0px;
+  }
+  @include respond-to(tablets1024) {
+    max-width: 924px;
+    padding: 0 50px;
+  }
+  @include respond-to(desktopHD1440) {
+    max-width: 1240px;
+    padding: 0 70px;
+  }
+  @include respond-to(desktopHDXL1440) {
+    max-width: 1240px;
+    padding: 0 100px;
+  }
 }

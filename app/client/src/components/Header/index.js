@@ -6,7 +6,6 @@ import Wrap from '../Wrap';
 
 export default () => (
   <div className="header">
-    {/* <div className="wrap"> */}
     <Wrap>
       <div className="header-wrap">
         <div className="navbar-wrap">
@@ -17,8 +16,5 @@ export default () => (
         </div>
       </div>
     </Wrap>
-
-    {/* <div className="navbar-wrap"><Navbar /></div> */}
-    {/* </div> */}
   </div>
 );

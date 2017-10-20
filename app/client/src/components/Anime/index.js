@@ -15,7 +15,7 @@ const getAnimationOptions = name => {
       };
     case 'mi':
       return {
-        scale: 1.2,
+        scale: 1.05,
         duration: 800,
         elasticity: 400,
         shadowColor: '#000',
