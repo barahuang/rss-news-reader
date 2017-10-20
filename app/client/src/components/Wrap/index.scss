@@ -6,19 +6,9 @@
   padding: 0 100px;
   height: 100%;
 
-  /* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-  /*
-Note: The best way to structure the use of media queries is to create the queries 
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it 
-there. 
-*/
-
   @include respond-to(phone320) {
-    max-width: 411px;
-    width: 100%;
-    padding: 0 0px;
+    max-width: 414px;
+    padding: 0 10px;
   }
   @include respond-to(tablets1024) {
     max-width: 924px;

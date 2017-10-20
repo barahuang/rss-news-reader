@@ -9,7 +9,25 @@
   .content-body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 14px;
+
+    @include respond-to(phone320) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-gap: 0;
+    }
+    @include respond-to(tablets1024) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @include respond-to(desktopHD1440) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+    @include respond-to(desktopHDXL1440) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
   }
 }

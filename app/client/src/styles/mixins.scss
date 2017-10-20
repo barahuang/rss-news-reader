@@ -4,29 +4,24 @@
   align-items: center;
 }
 
-$xs: 320px;
-$md: 720px;
-$lg: 1024px;
-$xl: 1440px;
-
 @mixin respond-to($media) {
   @if $media == phone320 {
-    @media screen and (max-width: $xs) {
+    @media only screen and (max-width: 414px) {
       @content;
     }
   } @else if $media == tablets1024 {
     //tablet landscape
-    @media screen and (max-width: $lg) {
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
       @content;
     }
   } @else if $media == desktopHD1440 {
     //desktop HD
-    @media screen and (max-width: $xl) {
+    @media only screen and (max-width: 1440px) and (min-width: 1025px) {
       @content;
     }
   } @else if $media == desktopHDXL1440 {
     //Larger than desktop HD
-    @media screen and (min-width: $xl) {
+    @media only screen and (min-width: 1441px) {
       @content;
     }
   }

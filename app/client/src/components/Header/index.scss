@@ -8,12 +8,20 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+
+    //.header-wrap responsive
     @include respond-to(phone320) {
-      grid-template-columns: 3fr 3fr 1fr;
+      grid-template-columns: 3fr 3fr 0;
     }
 
-    @include respond-to(desktop1024) {
-      grid-template-columns: 3fr 3fr 1fr;
+    @include respond-to(tablets1024) {
+      grid-template-columns: 3fr 3fr 0;
+    }
+    @include respond-to(desktopHD1440) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    @include respond-to(desktopHD1440) {
+      grid-template-columns: 1fr 2fr 1fr;
     }
   }
 
@@ -26,5 +34,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include respond-to(phone320) {
+      justify-content: right;
+    }
+
+    @include respond-to(tablets1024) {
+      justify-content: right;
+    }
+    @include respond-to(desktopHD1440) {
+      justify-content: center;
+    }
+    @include respond-to(desktopHD1440) {
+      justify-content: center;
+    }
   }
 }
