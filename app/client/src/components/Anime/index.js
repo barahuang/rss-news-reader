@@ -18,10 +18,7 @@ const getAnimationOptions = name => {
         scale: 1.05,
         duration: 800,
         elasticity: 400,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2
+        boxShadow: '10px 10px grey'
       };
 
     case 'mo':
@@ -31,11 +28,11 @@ const getAnimationOptions = name => {
         elasticity: 300
       };
 
-    case 'mi2':
+    case 'inputClick':
       return {
-        display: 'none',
-        easing: 'easeOutElastic'
+        width: '450px'
       };
+
     case 'mo2':
       return {
         display: 'block',

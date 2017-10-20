@@ -3,12 +3,23 @@
 .reading-wrapper {
   display: grid;
   grid-template-columns: 400px 1fr;
-}
-.reading-left {
-  padding: 0 40px;
-}
-.reading-right {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+
+  .reading-left {
+    padding: 0 40px;
+  }
+  .reading-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  // @include respond-to(phone320) {
+  //   max-width: 414px;
+  // }
+  // @include respond-to(tablets1024) {
+  //   max-width: 600px;
+  // }
+  // @include respond-to(desktopHD1440) {
+  //   max-width: 740px;
+  // }
 }
