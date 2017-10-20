@@ -1,4 +1,5 @@
 import React from 'react';
+import timeago from 'timeago.js';
 import './index.css';
 
 const indexNum = () => {
@@ -17,6 +18,11 @@ const tagstyle = () => ({
   whiteSpace: 'nowrap',
   textTransform: 'capitalize'
 });
+
+const getRelativeTime = date => {
+  var timeagoInstance = timeago();
+  return timeagoInstance.format(date);
+};
 
 export default ({
   index,
@@ -45,7 +51,7 @@ export default ({
         <div className="card-info">
           <span className="card-author">{author} </span>
           &middot;
-          <span className="card-date">{date}</span>
+          <span className="card-date">{getRelativeTime(date)}</span>
         </div>
         <div className="ifnew">{ifnew}</div>
       </div>

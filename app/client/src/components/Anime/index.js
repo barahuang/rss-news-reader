@@ -84,6 +84,20 @@ const getAnimationOptions = name => {
         // }
       };
 
+    case 'lettering':
+      return {
+        translateY: ['1em', '0'],
+        opacity: [0, 1],
+        duration: 750,
+        delay: (el, i) => i * 50
+      };
+    case 'appearing':
+      return {
+        translateY: ['20px', '0'],
+        opacity: [0, 1],
+        duration: 750,
+        delay: (el, i) => 1000 + i * 50
+      };
     default:
       return {};
   }

@@ -1,19 +1,28 @@
 $palette: #0092f1, #2d47ff, #6e00f4, #aa00ff, #d70063, #e90000, #f10000, #ff5f00;
 
+.featured-text-letter {
+  display: inline-block;
+}
 .active {
   .featured-text {
-    @for $i from 1 through length($palette) {
-      .featured-text-letter-#{$i} {
-        color: nth($palette, $i);
+    .featured-text-letter {
+      display: inline-block;
+      @for $i from 1 through length($palette) {
+        &.featured-text-letter-#{$i} {
+          color: nth($palette, $i);
+        }
       }
     }
   }
 }
 .title {
   .featured-text {
-    @for $i from 1 through length($palette) {
-      .featured-text-letter-#{$i} {
-        color: nth($palette, $i);
+    .featured-text-letter {
+      display: inline-block;
+      @for $i from 1 through length($palette) {
+        &.featured-text-letter-#{$i} {
+          color: nth($palette, $i);
+        }
       }
     }
   }

@@ -14,7 +14,7 @@
     margin-bottom: 10px;
     overflow: hidden;
     max-height: 30px;
-    transition: max-height 0.4s 0.3s;
+    transition: max-height 0.4s 0.1s;
     &:hover {
       transition: max-height 0.4s 0.3s;
       max-height: 100px;
@@ -27,14 +27,36 @@
     font-weight: bold;
     margin-bottom: 13px;
   }
-  .article-author {
+
+  .article-info {
+    width: max-content;
+    padding: 0 28px;
+    background-color: #000;
     font-family: 'Crimson Text', serif;
     font-size: 14px;
-    color: #ffffff;
-    padding: 0 28px;
-    width: max-content;
+    color: #fff;
+    font-weight: 400;
     @include flex-center;
-    text-transform: uppercase;
-    background-color: #000;
+    height: 20px;
+    .article-author {
+      text-transform: uppercase;
+      padding-right: 10px;
+    }
+    .article-date {
+      padding-left: 10px;
+    }
   }
+
+  // .article-author {
+  //   font-family: 'Crimson Text', serif;
+  //   font-size: 14px;
+  //   color: #ffffff;
+  //   padding: 0 28px;
+  //   width: max-content;
+  //   @include flex-center;
+  //   text-transform: uppercase;
+  //   background-color: #000;
+  // }
+  // .article-date {
+  // }
 }

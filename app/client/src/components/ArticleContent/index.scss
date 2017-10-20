@@ -15,14 +15,20 @@
   }
   a {
     text-decoration: none;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 2px dashed #e8e8e8;
+
+    &:hover {
+      color: $blue;
+    }
   }
+
   strong {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22;
     font-weight: bold;
   }
   h2 {
+    margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24;
     font-weight: bold;
@@ -32,15 +38,27 @@
     font-size: 22;
     font-weight: bold;
   }
-  ul {
-    font-family: Arial, Helvetica, sans-serif;
+  ul li {
     font-size: 20px;
-    margin: 10px 0;
+    margin: 5px 0 5px 50px;
+
     list-style: square;
     list-style-position: inside;
   }
+  pre {
+    font-family: monospace;
+    padding: 16px;
+    overflow: auto;
+    font-size: 75%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+  }
   img {
-    padding: 10px 20px;
-    width: 100%;
+    display: block;
+    margin: 2em 0;
+    max-width: 100%;
+    width: auto;
+    height: auto;
   }
 }

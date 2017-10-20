@@ -27,7 +27,16 @@ export default ({ index, tags, title, author, content, date }) => (
       ))}
     </div>
     <div className="article-title">{title}</div>
-    <div className="article-author">{author}</div>
+    <div className="article-info">
+      <span className="article-author">{author}</span>
+      &middot;
+      <span className="article-date">
+        {date
+          .split(' ')
+          .slice(0, 4)
+          .join(' ')}
+      </span>
+    </div>
     <div className="article-content">
       <ArticleContent content={content} />
     </div>
