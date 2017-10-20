@@ -7,6 +7,12 @@ import Title from '../Title';
 import Wrap from '../Wrap';
 import Card from '../Card';
 
+const getImgUrl = html => {
+  const reg = new RegExp(`<img[^>]+src\s*=\s*['"]([^'"]+)['"][^>]*>`);
+  const matches = reg.exec(html);
+  return matches && matches.length > 0 ? matches[1] : '';
+};
+
 export default ({ feeds }) => (
   <div className="content">
     <Wrap>
@@ -29,7 +35,7 @@ export default ({ feeds }) => (
                   author={feed.author}
                   content={feed.contentHtml}
                   date={feed.pubDate}
-                  imgUrl="https://blogs.esri.com/esri/arcgis/files/2017/10/01-fig-1-7-v2.jpg"
+                  imgUrl={getImgUrl(feed.contentHtml)}
                 />
               </div>
             </Link>
