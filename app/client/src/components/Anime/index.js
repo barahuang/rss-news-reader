@@ -17,8 +17,7 @@ const getAnimationOptions = name => {
       return {
         scale: 1.05,
         duration: 800,
-        elasticity: 400,
-        boxShadow: '10px 10px grey'
+        elasticity: 400
       };
 
     case 'mo':

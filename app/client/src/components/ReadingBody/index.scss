@@ -2,20 +2,32 @@
 
 .reading-wrapper {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 10%;
 
   @include respond-to(phone320) {
+    grid-template-columns: 1fr;
+  }
+
+  @include respond-to(tablets768) {
+    grid-template-columns: 1fr;
   }
   @include respond-to(tablets1024) {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 200px 1fr;
   }
   @include respond-to(desktopHD1440) {
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 200px 1fr;
+  }
+
+  @include respond-to(desktopHD1440) {
+    grid-template-columns: 250px 1fr;
   }
 
   .reading-left {
-    padding: 0 40px;
     @include respond-to(phone320) {
+      display: none;
+    }
+    @include respond-to(tablets768) {
       display: none;
     }
   }

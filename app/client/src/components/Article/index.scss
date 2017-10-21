@@ -3,15 +3,18 @@
 
 .article-wrapper {
   max-width: 860px;
-  padding: 38px;
   margin-bottom: 20%;
 
   @include respond-to(phone320) {
-    max-width: 414px;
-    padding: 26px;
+    max-width: 100%;
   }
+
+  @include respond-to(tablets768) {
+    max-width: 100%;
+  }
+
   @include respond-to(tablets1024) {
-    max-width: 600px;
+    max-width: 100%;
   }
   @include respond-to(desktopHD1440) {
     max-width: 740px;
@@ -25,18 +28,23 @@
     margin-bottom: 10px;
     overflow: hidden;
     max-height: 30px;
-    transition: max-height 0.4s 0.1s;
     &:hover {
       transition: max-height 0.4s 0.3s;
       max-height: 100px;
     }
   }
   .article-title {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 45px;
     line-height: 1.2;
     font-weight: bold;
     margin-bottom: 13px;
+
+    @include respond-to(phone320) {
+      font-size: 30px;
+    }
+    @include respond-to(tablets1024) {
+      font-size: 38px;
+    }
   }
 
   .article-info {

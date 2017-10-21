@@ -10,9 +10,13 @@
     max-width: 414px;
     padding: 0 10px;
   }
+  @include respond-to(tablets768) {
+    max-width: 688px;
+    padding: 0 40px;
+  }
   @include respond-to(tablets1024) {
     max-width: 924px;
-    padding: 0 70px;
+    padding: 0 60px;
   }
   @include respond-to(desktopHD1440) {
     max-width: 1240px;

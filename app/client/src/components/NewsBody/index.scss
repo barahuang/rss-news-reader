@@ -12,10 +12,14 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 14px;
 
-    @include respond-to(phone320) {
+    @include respond-to(phoneCard) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
       grid-gap: 0;
+    }
+    @include respond-to(tabletsCard) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
     }
     @include respond-to(tablets1024) {
       grid-template-columns: 1fr 1fr;
