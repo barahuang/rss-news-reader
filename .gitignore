@@ -58,8 +58,3 @@ typings/
 .env
 
 **/.DS_Store
-
-# scss
-.sass-cache/
-**/*.css.map
-**/*.css
