@@ -13,7 +13,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/feed')
+    fetch('http://ec2-52-15-187-37.us-east-2.compute.amazonaws.com:3001/feed')
+      // fetch('http://localhost:3001/feed')
       .then(res => res.json())
       .then(feedData => this.setState({ feeds: feedData.feed.entries }))
       .catch(e => console.error('Failed:', e));
