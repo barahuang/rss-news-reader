@@ -11,9 +11,11 @@
 
     //.header-wrap responsive
     @include respond-to(phone320) {
-      grid-template-columns: 3fr 3fr 0;
+      grid-template-columns: 3fr 1fr 0;
     }
-
+    @include respond-to(tablets768) {
+      grid-template-columns: 3fr 1fr 0;
+    }
     @include respond-to(tablets1024) {
       grid-template-columns: 3fr 3fr 0;
     }
@@ -36,11 +38,14 @@
     align-items: center;
 
     @include respond-to(phone320) {
-      justify-content: right;
+      justify-content: flex-end;
+    }
+    @include respond-to(tablets768) {
+      justify-content: flex-end;
     }
 
     @include respond-to(tablets1024) {
-      justify-content: right;
+      justify-content: flex-end;
     }
     @include respond-to(desktopHD1440) {
       justify-content: center;

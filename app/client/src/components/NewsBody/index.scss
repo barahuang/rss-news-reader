@@ -5,6 +5,9 @@
   .content-title-wrap {
     height: 200px;
     @include flex-center();
+    @include respond-to(phoneCard) {
+      display: none;
+    }
   }
   .content-body {
     display: grid;
