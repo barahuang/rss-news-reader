@@ -22,12 +22,14 @@ app.use(cors());
 
 app.set('port', process.env.PORT || 3001);
 app.get('/feed', (req, res) => {
+  console.log(`[GET:/feed] ${new Date().toLocaleString()}`);
   res.json({
     feed
   });
 });
 
 app.get('/', (req, res) => {
+  console.log(`[GET:/] ${new Date().toLocaleString()}`);
   res.send('Server is working.');
 });
 
