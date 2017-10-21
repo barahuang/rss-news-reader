@@ -8,6 +8,7 @@
 
   @include respond-to(phone320) {
     max-width: 414px;
+    padding: 26px;
   }
   @include respond-to(tablets1024) {
     max-width: 600px;
