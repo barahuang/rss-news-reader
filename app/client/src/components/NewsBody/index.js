@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import anime from '../Anime';
-
 import './index.css';
 import Title from '../Title';
 import Wrap from '../Wrap';
@@ -15,10 +14,6 @@ const getImgUrl = html => {
 };
 
 export default class Newsbody extends React.Component {
-  // componentDidMount() {
-  //   anime('.card', 'appearing');
-  // }
-
   render() {
     // if (this.props.feeds && this.props.feeds.length > 0) {
     //   anime('.card', 'appearing');
@@ -28,7 +23,7 @@ export default class Newsbody extends React.Component {
         <Wrap>
           <div className="wrapper">
             <div className="content-title-wrap">
-              <Title content="News" />
+              <Title content={`${this.props.titleName}`} />
             </div>
             <div className="content-body">
               {this.props.feeds &&

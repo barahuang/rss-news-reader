@@ -24,8 +24,10 @@ class App extends Component {
       .then(feedData => this.setState({ feeds: feedData.feed.entries }))
       .catch(e => console.error('Failed:', e));
   }
-  newsBody = () => <NewsBody feeds={this.state.feeds} />;
-  favBody = () => <NewsBody feeds={this.state.favoriteFeeds} />;
+  newsBody = () => <NewsBody feeds={this.state.feeds} titleName="News" />;
+  favBody = () => (
+    <NewsBody feeds={this.state.favoriteFeeds} titleName="Favorite" />
+  );
   readingBody1 = () => <ReadingBody feeds={this.state.feeds} />;
   readingBody2 = () => <ReadingBody feeds={this.state.favoriteFeeds} />;
   render() {

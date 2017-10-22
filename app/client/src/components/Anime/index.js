@@ -89,10 +89,10 @@ const getAnimationOptions = name => {
       };
     case 'appearing':
       return {
-        translateY: ['20px', '0'],
+        translateY: ['10em', '0'],
         opacity: [0, 1],
         duration: 750,
-        delay: (el, i) => 1000 + i * 50
+        delay: (el, i) => i * 100
       };
     default:
       return {};
