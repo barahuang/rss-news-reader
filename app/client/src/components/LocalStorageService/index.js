@@ -1,28 +1,38 @@
-const updateLocalStorage = (feed, saving) => {
-  const preListString = window.localStorage.getItem('favoriteList');
+const storageName = 'favoriteList';
+
+const updateLocalStorage = (feed, isSaving) => {
+  const preListString = window.localStorage.getItem(storageName);
   let newListArray = []; // a real array
 
   if (!!preListString) {
     const preListArray = JSON.parse(preListString);
-    if (!!saving) {
+    if (!!isSaving) {
       //save the feed
       newListArray = [feed, ...preListArray];
     } else {
       // remove the feed
       newListArray = preListArray.filter(
-        fd => JSON.stringify(fd) !== JSON.stringify(feed)
+        feedItem => JSON.stringify(feedItem) !== JSON.stringify(feed)
       );
     }
   } else {
     newListArray = [feed];
   }
 
-  window.localStorage.setItem('favoriteList', JSON.stringify(newListArray));
+  window.localStorage.setItem(storageName, JSON.stringify(newListArray));
 };
 
-const isInLocalStorage = feed => {
-  const preListString = window.localStorage.getItem('favoriteList');
-  return preListString.indexOf(JSON.stringify(feed)) !== -1;
+const add = feed => {
+  updateLocalStorage(feed, true);
 };
 
-export { updateLocalStorage, isInLocalStorage };
+const remove = feed => {
+  updateLocalStorage(feed, false);
+};
+
+const check = feed => {
+  const preListString = window.localStorage.getItem(storageName);
+  return !!preListString && preListString.indexOf(JSON.stringify(feed)) > -1;
+};
+
+export { add, remove, check };

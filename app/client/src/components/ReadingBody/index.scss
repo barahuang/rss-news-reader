@@ -5,6 +5,7 @@
   top: 90px;
   right: calc(5vw + 30px);
   transition: 0.3s;
+  z-index: 2;
   svg path {
     transition: 0.3s;
   }

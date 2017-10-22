@@ -9,41 +9,43 @@ export default class ReadingBody extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFeed: this.props.feeds[this.getCurrentIndex()],
-      isCurrentFeedFavorited: false
+      isCurrentFeedFavorited: LSS.check(this.getCurrentFeed())
     };
     this.toggleFavorite = this.toggleFavorite.bind(this);
   }
 
-  setCurrentIsFavorited() {
-    this.setState({
-      isCurrentFeedFavorited: LSS.isInLocalStorage(this.state.currentFeed)
-    });
-  }
-
   getCurrentIndex() {
     const url = new URL(window.location.href);
-    return url.searchParams.get('i');
+    return parseInt(url.searchParams.get('i'), 10);
+  }
+
+  getCurrentFeed() {
+    return this.props.feeds[this.getCurrentIndex()];
   }
 
   toggleFavorite() {
-    LSS.updateLocalStorage(
-      this.state.currentFeed,
-      !LSS.isInLocalStorage(this.state.currentFeed)
-    );
-  }
+    const currentFeed = this.getCurrentFeed();
+    const isFavorited = LSS.check(currentFeed);
 
-  componnetDidMount() {
-    this.setCurrentIsFavorited();
+    if (!isFavorited) {
+      LSS.add(currentFeed);
+    } else {
+      LSS.remove(currentFeed);
+    }
+
+    this.setState({
+      isCurrentFeedFavorited: !isFavorited
+    });
   }
 
   render() {
-    const currentFeed = this.state.currentFeed;
+    const currentFeed = this.getCurrentFeed();
     return (
       <div>
         <Wrap>
           <div
-            className={`bookmark ${this.state.isCurrentFeedFavorited
+            className={`bookmark ${this.state.isCurrentFeedFavorited ||
+            LSS.check(currentFeed)
               ? 'active'
               : ''}`}
             onClick={this.toggleFavorite}
