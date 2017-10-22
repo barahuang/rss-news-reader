@@ -3,13 +3,23 @@
 .active {
   .article-list-item {
     color: $blue;
-    font-weight: bold;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 100%;
+      margin-top: -20px;
+      margin-left: -22px;
+      background-color: $blue;
+      z-index: 2;
+    }
   }
 }
 .article-list-item {
   &:hover {
+    transition: 0.3s;
     color: $blue;
-    font-weight: bold;
   }
   transition: 0.3s;
   font-weight: 100;
