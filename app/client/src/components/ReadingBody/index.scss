@@ -14,7 +14,7 @@
       fill: $blue; //#d0021b;
     }
   }
-  .active svg path {
+  &.active svg path {
     fill: $blue; //#d0021b;
   }
 }
