@@ -34,6 +34,7 @@ class App extends Component {
         <div className="header-wrapper">
           <Header />
         </div>
+
         <Route path="/" exact={true} component={this.newsBody} />
         <Route
           path="/reading/:index"
