@@ -26,15 +26,21 @@ const add = feed => {
   updateLocalStorage(feed, true);
 };
 
-const getAll = () => JSON.parse(window.localStorage.getItem(storageName));
+const getAll = targetStorageName =>
+  JSON.parse(window.localStorage.getItem(targetStorageName));
 
+const dump = (targetStorageName, feeds) => {
+  window.localStorage.setItem(targetStorageName, JSON.stringify(feeds));
+};
 const remove = feed => {
   updateLocalStorage(feed, false);
 };
 
-const check = feed => {
-  const preListString = window.localStorage.getItem(storageName);
-  return !!preListString && preListString.indexOf(JSON.stringify(feed)) > -1;
+const check = (targetStorageName, feed) => {
+  const targetListString = window.localStorage.getItem(targetStorageName);
+  return (
+    !!targetListString && targetListString.indexOf(JSON.stringify(feed)) > -1
+  );
 };
 
-export { getAll, add, remove, check };
+export { getAll, dump, add, remove, check };

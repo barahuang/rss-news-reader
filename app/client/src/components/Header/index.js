@@ -4,12 +4,12 @@ import Navbar from '../Navbar';
 import Searchbar from '../Searchbar';
 import Wrap from '../Wrap';
 
-export default () => (
+export default ({ newCount }) => (
   <div className="header">
     <Wrap>
       <div className="header-wrap">
         <div className="navbar-wrap">
-          <Navbar />
+          <Navbar newCount={newCount} />
         </div>
         <div className="searchbar-wrap">
           <Searchbar />

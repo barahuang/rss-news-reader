@@ -12,7 +12,7 @@ const animateFavorite = () => {
   anime('#favorite .featured-text-letter', 'lettering');
 };
 
-export default () => (
+export default ({ newCount }) => (
   <nav className="navbar">
     <NavLink exact={true} to="/" activeClassName="active">
       <span onMouseEnter={animateNews}>
@@ -21,7 +21,7 @@ export default () => (
     </NavLink>
     <div className="navbar-gap-sm" />
     <NavLink exact={true} to="/#">
-      <div className="tag-update">5</div>
+      {newCount > 0 && <div className="tag-update">{newCount}</div>}
     </NavLink>
     <div className="navbar-gap-md" />
     <NavLink exact={true} to="/favorite" activeClassName="active">

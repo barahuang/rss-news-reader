@@ -7,10 +7,15 @@ import Wrap from '../Wrap';
 import * as LSS from '../LocalStorageService';
 
 export default class ReadingBody extends React.Component {
+  favoriteListLocalStorageName = 'favoriteList';
+
   constructor(props) {
     super(props);
     this.state = {
-      isCurrentFeedFavorited: LSS.check(this.getCurrentFeed())
+      isCurrentFeedFavorited: LSS.check(
+        this.favoriteListLocalStorageName,
+        this.getCurrentFeed()
+      )
     };
     this.toggleFavorite = this.toggleFavorite.bind(this);
   }
@@ -26,7 +31,10 @@ export default class ReadingBody extends React.Component {
 
   toggleFavorite() {
     const currentFeed = this.getCurrentFeed();
-    const isFavorited = LSS.check(currentFeed);
+    const isFavorited = LSS.check(
+      this.favoriteListLocalStorageName,
+      currentFeed
+    );
 
     if (!isFavorited) {
       LSS.add(currentFeed);
@@ -39,6 +47,17 @@ export default class ReadingBody extends React.Component {
     });
   }
 
+  clickArticleListItem(index) {
+    const isFavorited = LSS.check(
+      this.favoriteListLocalStorageName,
+      this.props.feeds[index]
+    );
+    this.setState({
+      isCurrentFeedFavorited: isFavorited
+    });
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const currentFeed = this.getCurrentFeed();
     return (
@@ -46,7 +65,7 @@ export default class ReadingBody extends React.Component {
         <Wrap>
           <div
             className={`bookmark ${this.state.isCurrentFeedFavorited ||
-            LSS.check(currentFeed)
+            LSS.check(this.favoriteListLocalStorageName, currentFeed)
               ? 'active'
               : ''}`}
             onClick={this.toggleFavorite}
@@ -70,9 +89,7 @@ export default class ReadingBody extends React.Component {
                   to={`/reading/${index}`}
                   key={index}
                   activeClassName="active"
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                  }}
+                  onClick={() => this.clickArticleListItem(index)}
                 >
                   <ArticleList key={index} title={feed.title} />
                 </NavLink>

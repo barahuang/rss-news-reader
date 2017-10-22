@@ -26,8 +26,8 @@ export default class Newsbody extends React.Component {
               <Title content={`${this.props.titleName}`} />
             </div>
             <div className="content-body">
-              {this.props.feeds &&
-                this.props.feeds.map((feed, index) => (
+              {this.props.newFeeds &&
+                this.props.newFeeds.map((feed, index) => (
                   <Link to={`/reading/${index}`} key={index}>
                     <div
                       className={`card card-${index}`}
@@ -35,6 +35,28 @@ export default class Newsbody extends React.Component {
                       onMouseLeave={() => anime(`.card-${index}`, 'mo')}
                     >
                       <Card
+                        ifnew={true}
+                        index={index}
+                        tags={feed.categories}
+                        title={feed.title}
+                        author={feed.author}
+                        content={feed.contentHtml}
+                        date={feed.pubDate}
+                        imgUrl={getImgUrl(feed.contentHtml)}
+                      />
+                    </div>
+                  </Link>
+                ))}
+              {this.props.oldFeeds &&
+                this.props.oldFeeds.map((feed, index) => (
+                  <Link to={`/reading/${index}`} key={index}>
+                    <div
+                      className={`card card-${index}`}
+                      onMouseEnter={() => anime(`.card-${index}`, 'mi')}
+                      onMouseLeave={() => anime(`.card-${index}`, 'mo')}
+                    >
+                      <Card
+                        ifnew={false}
                         index={index}
                         tags={feed.categories}
                         title={feed.title}
