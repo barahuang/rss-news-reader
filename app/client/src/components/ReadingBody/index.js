@@ -39,10 +39,6 @@ export default class ReadingBody extends React.Component {
     });
   }
 
-  // componentDidUpdate() {
-  //   window.scrollTo(0, 0);
-  // }
-
   render() {
     const currentFeed = this.getCurrentFeed();
     return (
@@ -74,6 +70,9 @@ export default class ReadingBody extends React.Component {
                   to={`/reading/${index}`}
                   key={index}
                   activeClassName="active"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   <ArticleList key={index} title={feed.title} />
                 </NavLink>

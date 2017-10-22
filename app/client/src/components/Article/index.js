@@ -13,17 +13,6 @@ const colorNum = colornum => {
 };
 
 export default class Article extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-  goBackToTop() {
-    window.scrollTo(0, 0);
-  }
-
-  // componentDidUpdate() {
-  //   this.goBackToTop();
-  // }
-
   render() {
     const { index, tags, title, author, content, link, date } = this.props;
     return (
@@ -58,7 +47,12 @@ export default class Article extends React.Component {
         <div className="article-content">
           <ArticleContent content={content} />
           <div className="article-content-footer">
-            <div class="backtotop" onClick={this.goBackToTop}>
+            <div
+              className="backtotop"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               Back to top
             </div>
           </div>
