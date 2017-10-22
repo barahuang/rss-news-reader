@@ -26,6 +26,8 @@ const add = feed => {
   updateLocalStorage(feed, true);
 };
 
+const getAll = () => JSON.parse(window.localStorage.getItem(storageName));
+
 const remove = feed => {
   updateLocalStorage(feed, false);
 };
@@ -35,4 +37,4 @@ const check = feed => {
   return !!preListString && preListString.indexOf(JSON.stringify(feed)) > -1;
 };
 
-export { add, remove, check };
+export { getAll, add, remove, check };

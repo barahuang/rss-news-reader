@@ -31,25 +31,26 @@ export default class Newsbody extends React.Component {
               <Title content="News" />
             </div>
             <div className="content-body">
-              {this.props.feeds.map((feed, index) => (
-                <Link to={`/reading?i=${index}`} key={index}>
-                  <div
-                    className={`card card-${index}`}
-                    onMouseEnter={() => anime(`.card-${index}`, 'mi')}
-                    onMouseLeave={() => anime(`.card-${index}`, 'mo')}
-                  >
-                    <Card
-                      index={index}
-                      tags={feed.categories}
-                      title={feed.title}
-                      author={feed.author}
-                      content={feed.contentHtml}
-                      date={feed.pubDate}
-                      imgUrl={getImgUrl(feed.contentHtml)}
-                    />
-                  </div>
-                </Link>
-              ))}
+              {this.props.feeds &&
+                this.props.feeds.map((feed, index) => (
+                  <Link to={`/reading?i=${index}`} key={index}>
+                    <div
+                      className={`card card-${index}`}
+                      onMouseEnter={() => anime(`.card-${index}`, 'mi')}
+                      onMouseLeave={() => anime(`.card-${index}`, 'mo')}
+                    >
+                      <Card
+                        index={index}
+                        tags={feed.categories}
+                        title={feed.title}
+                        author={feed.author}
+                        content={feed.contentHtml}
+                        date={feed.pubDate}
+                        imgUrl={getImgUrl(feed.contentHtml)}
+                      />
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
         </Wrap>
