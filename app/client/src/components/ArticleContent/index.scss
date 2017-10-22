@@ -8,7 +8,7 @@
   line-height: 1.58;
   margin: 20px 0;
   word-wrap: normal;
-
+  //Break point for phone
   @include respond-to(phone320) {
     font-size: 20px;
   }

@@ -22,6 +22,7 @@ $tag-colors: #0092f1, #2d47ff, #6e00f4, #aa00ff, #d70063, #e90000, #ff5f00,
       z-index: 0;
       background-color: rgba(nth($card-overlay-colors, $i), 0.5);
       border-radius: 5px;
+      //BreakPoint for phone and narrower screen
       @include respond-to(phone320) {
         border-radius: 0px;
       }

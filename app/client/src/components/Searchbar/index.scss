@@ -15,7 +15,8 @@
     background-color: $lighter-grey;
     color: #000;
     padding: 0 10px;
-
+    transition: 0.5s;
+    //Break point for phone and tablet
     @include respond-to(phone320) {
       display: none;
     }

@@ -1,9 +1,11 @@
+//Center the content
 @mixin flex-center() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+//Media Queries
 @mixin respond-to($media) {
   @if $media == phone320 {
     //phone portrait

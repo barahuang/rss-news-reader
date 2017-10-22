@@ -57,8 +57,10 @@ export default class Article extends React.Component {
         </div>
         <div className="article-content">
           <ArticleContent content={content} />
-          <div className="article-content-footer" onClick={this.goBackToTop}>
-            Back to top
+          <div className="article-content-footer">
+            <div class="backtotop" onClick={this.goBackToTop}>
+              Back to top
+            </div>
           </div>
         </div>
       </div>
