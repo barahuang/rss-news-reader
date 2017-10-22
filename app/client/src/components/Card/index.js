@@ -41,11 +41,14 @@ export default ({
     <div className="position" />
     <div className="card-content-wrapper">
       <div className="card-tag">
-        {tags.map((tag, i) => (
-          <span key={i}>
-            {i === 0 ? '' : ' / '} <span style={tagstyle()}>{tag}</span>
-          </span>
-        ))}
+        {tags.map(
+          (tag, i) =>
+            i < 7 && (
+              <span key={i}>
+                {i === 0 ? '' : ' / '} <span style={tagstyle()}>{tag}</span>
+              </span>
+            )
+        )}
       </div>
       <div className="card-title">{title}</div>
       <div className="card-content-bottom">

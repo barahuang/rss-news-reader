@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <div className="header-wrapper">
           <Header />
         </div>
         <Route path="/" exact={true} component={this.newsBody} />
