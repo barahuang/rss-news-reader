@@ -13,9 +13,9 @@ const colorNum = colornum => {
 };
 
 export default class Article extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   goBackToTop() {
     window.scrollTo(0, 0);
   }
@@ -25,7 +25,7 @@ export default class Article extends React.Component {
   // }
 
   render() {
-    const { index, tags, title, author, content, date } = this.props;
+    const { index, tags, title, author, content, link, date } = this.props;
     return (
       <div className="article-wrapper">
         <div
@@ -40,7 +40,11 @@ export default class Article extends React.Component {
             </span>
           ))}
         </div>
-        <div className="article-title">{title}</div>
+        <div className="article-title">
+          <a href={`${link}`} target="_blank">
+            {title}
+          </a>
+        </div>
         <div className="article-info">
           <span className="article-author">{author}</span>
           &middot;

@@ -87,6 +87,7 @@ export default class ReadingBody extends React.Component {
                   author={currentFeed.author}
                   content={currentFeed.contentHtml}
                   date={currentFeed.pubDate}
+                  link={currentFeed.link}
                   index={this.getCurrentIndex()}
                 />
               </div>

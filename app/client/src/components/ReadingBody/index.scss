@@ -44,16 +44,31 @@
   }
 
   .reading-left {
+    position: fixed;
+    top: 115px;
+    bottom: 50px;
+    width: 250px;
+    overflow: auto;
+    z-index: 1;
     @include respond-to(phone320) {
       display: none;
     }
     @include respond-to(tablets768) {
       display: none;
     }
+    @include respond-to(tablets1024) {
+      width: 200px;
+    }
+    @include respond-to(desktopHD1440) {
+      width: 200px;
+    }
+
+    @include respond-to(desktopHD1440) {
+      width: 250px;
+    }
   }
   .reading-right {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-self: center;
+    grid-column-start: 2;
   }
 }

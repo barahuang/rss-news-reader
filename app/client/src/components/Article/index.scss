@@ -45,6 +45,14 @@
     @include respond-to(tablets1024) {
       font-size: 38px;
     }
+    a {
+      transition: 0.3s;
+      text-decoration: none;
+      &:hover {
+        color: $blue;
+        transition: 0.3s;
+      }
+    }
   }
 
   .article-info {
