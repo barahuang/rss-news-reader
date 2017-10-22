@@ -19,7 +19,7 @@ class App extends Component {
       favoriteFeeds: LSS.getAll('favoriteList')
     };
 
-    // this.getFeeds = this.getFeeds.bind(this);
+    this.updateFavoritedFeeds = this.updateFavoritedFeeds.bind(this);
   }
 
   componentDidMount() {
@@ -44,22 +44,43 @@ class App extends Component {
   getFeeds() {
     return [...this.state.newFeeds, ...this.state.oldFeeds];
   }
+
+  updateFavoritedFeeds() {
+    this.setState({
+      favoriteFeeds: LSS.getAll('favoriteList')
+    });
+  }
+
   newsBody = () => (
     <NewsBody
       newFeeds={this.state.newFeeds}
       oldFeeds={this.state.oldFeeds}
+      forWhat="reading"
       titleName="News"
     />
   );
   favBody = () => (
     <NewsBody
-      newFeeds={this.state.newFeeds}
-      oldFeeds={this.state.oldFeeds}
+      /* newFeeds={this.state.newFeeds} */
+      oldFeeds={this.state.favoriteFeeds}
+      forWhat="favorite"
       titleName="Favorite"
     />
   );
-  readingBody1 = () => <ReadingBody feeds={this.getFeeds()} />;
-  readingBody2 = () => <ReadingBody feeds={this.state.favoriteFeeds} />;
+  readingBody1 = () => (
+    <ReadingBody
+      feeds={this.getFeeds()}
+      forWhat="reading"
+      updateFavoritedFeeds={this.updateFavoritedFeeds}
+    />
+  );
+  readingBody2 = () => (
+    <ReadingBody
+      feeds={this.state.favoriteFeeds}
+      forWhat="favorite"
+      updateFavoritedFeeds={this.updateFavoritedFeeds}
+    />
+  );
   render() {
     return (
       <div className="App">
@@ -74,6 +95,11 @@ class App extends Component {
           component={this.readingBody1}
         />
         <Route path="/favorite" exact={true} component={this.favBody} />
+        <Route
+          path="/favorite/:index"
+          exact={true}
+          component={this.readingBody2}
+        />
       </div>
     );
   }

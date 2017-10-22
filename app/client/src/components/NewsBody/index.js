@@ -13,7 +13,7 @@ const getImgUrl = html => {
   return matches && matches.length > 0 ? matches[1] : '';
 };
 
-export default class Newsbody extends React.Component {
+export default class NewsBody extends React.Component {
   render() {
     // if (this.props.feeds && this.props.feeds.length > 0) {
     //   anime('.card', 'appearing');
@@ -28,7 +28,7 @@ export default class Newsbody extends React.Component {
             <div className="content-body">
               {this.props.newFeeds &&
                 this.props.newFeeds.map((feed, index) => (
-                  <Link to={`/reading/${index}`} key={index}>
+                  <Link to={`/${this.props.forWhat}/${index}`} key={index}>
                     <div
                       className={`card card-${index}`}
                       onMouseEnter={() => anime(`.card-${index}`, 'mi')}
@@ -49,7 +49,7 @@ export default class Newsbody extends React.Component {
                 ))}
               {this.props.oldFeeds &&
                 this.props.oldFeeds.map((feed, index) => (
-                  <Link to={`/reading/${index}`} key={index}>
+                  <Link to={`/${this.props.forWhat}/${index}`} key={index}>
                     <div
                       className={`card card-${index}`}
                       onMouseEnter={() => anime(`.card-${index}`, 'mi')}
@@ -75,36 +75,3 @@ export default class Newsbody extends React.Component {
     );
   }
 }
-
-// export default ({ feeds }) => (
-//   <div className="content">
-//     <Wrap>
-//       <div className="wrapper">
-//         <div className="content-title-wrap">
-//           <Title content="News" />
-//         </div>
-//         <div className="content-body">
-//           {feeds.map((feed, index) => (
-//             <Link to={`/reading?i=${index}`} key={index}>
-//               <div
-//                 className={`card-${index}`}
-//                 onMouseEnter={() => anime(`.card-${index}`, 'mi')}
-//                 onMouseLeave={() => anime(`.card-${index}`, 'mo')}
-//               >
-//                 <Card
-//                   index={index}
-//                   tags={feed.categories}
-//                   title={feed.title}
-//                   author={feed.author}
-//                   content={feed.contentHtml}
-//                   date={feed.pubDate}
-//                   imgUrl={getImgUrl(feed.contentHtml)}
-//                 />
-//               </div>
-//             </Link>
-//           ))}
-//         </div>
-//       </div>
-//     </Wrap>
-//   </div>
-// );

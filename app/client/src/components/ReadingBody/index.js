@@ -45,6 +45,8 @@ export default class ReadingBody extends React.Component {
     this.setState({
       isCurrentFeedFavorited: !isFavorited
     });
+
+    this.props.updateFavoritedFeeds();
   }
 
   clickArticleListItem(index) {
@@ -86,7 +88,7 @@ export default class ReadingBody extends React.Component {
             <div className="reading-left">
               {this.props.feeds.map((feed, index) => (
                 <NavLink
-                  to={`/reading/${index}`}
+                  to={`/${this.props.forWhat}/${index}`}
                   key={index}
                   activeClassName="active"
                   onClick={() => this.clickArticleListItem(index)}
