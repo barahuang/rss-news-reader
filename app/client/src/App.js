@@ -20,7 +20,6 @@ class App extends Component {
 
   componentDidMount() {
     fetch('http://ec2-52-15-187-37.us-east-2.compute.amazonaws.com:3001/feed')
-      // fetch('http://localhost:3001/feed')
       .then(res => res.json())
       .then(feedData => this.setState({ feeds: feedData.feed.entries }))
       .catch(e => console.error('Failed:', e));
@@ -36,7 +35,11 @@ class App extends Component {
           <Header />
         </div>
         <Route path="/" exact={true} component={this.newsBody} />
-        <Route path="/reading" exact={true} component={this.readingBody1} />
+        <Route
+          path="/reading/:index"
+          exact={true}
+          component={this.readingBody1}
+        />
         <Route path="/favorite" exact={true} component={this.favBody} />
       </div>
     );

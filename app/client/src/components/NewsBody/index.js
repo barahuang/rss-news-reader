@@ -33,7 +33,7 @@ export default class Newsbody extends React.Component {
             <div className="content-body">
               {this.props.feeds &&
                 this.props.feeds.map((feed, index) => (
-                  <Link to={`/reading?i=${index}`} key={index}>
+                  <Link to={`/reading/${index}`} key={index}>
                     <div
                       className={`card card-${index}`}
                       onMouseEnter={() => anime(`.card-${index}`, 'mi')}

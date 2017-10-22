@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import { NavLink } from 'react-router-dom';
 import Article from '../Article';
 import ArticleList from '../ArticleList';
 import Wrap from '../Wrap';
@@ -15,8 +16,8 @@ export default class ReadingBody extends React.Component {
   }
 
   getCurrentIndex() {
-    const url = new URL(window.location.href);
-    return parseInt(url.searchParams.get('i'), 10);
+    const a = window.location.href.split('/');
+    return a[a.length - 1];
   }
 
   getCurrentFeed() {
@@ -65,7 +66,13 @@ export default class ReadingBody extends React.Component {
           <div className="reading-wrapper">
             <div className="reading-left">
               {this.props.feeds.map((feed, index) => (
-                <ArticleList key={index} title={feed.title} />
+                <NavLink
+                  to={`/reading/${index}`}
+                  key={index}
+                  activeClassName="active"
+                >
+                  <ArticleList key={index} title={feed.title} />
+                </NavLink>
               ))}
             </div>
             {currentFeed && (
