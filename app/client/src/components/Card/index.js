@@ -57,7 +57,7 @@ export default ({
           &middot;
           <span className="card-date">{getRelativeTime(date)}</span>
         </div>
-        {ifnew && <div className="ifnew">{ifnew}</div>}
+        {ifnew ? <div className="ifnew" /> : <div className="ifnotnew" />}
       </div>
     </div>
   </div>

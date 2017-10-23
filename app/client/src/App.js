@@ -33,9 +33,12 @@ class App extends Component {
         );
         const oldFeeds = LSS.getAll('previousList');
         this.setState({ newFeeds, oldFeeds: oldFeeds ? oldFeeds : [] });
+        this.setState({
+          newFeeds,
+          oldFeeds: oldFeeds ? oldFeeds : []
+        });
       })
       .then(() => {
-        console.dir(this.getFeeds());
         LSS.dump('previousList', this.getFeeds());
       })
       .catch(e => console.error('Failed:', e));
