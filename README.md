@@ -4,10 +4,10 @@ This is a responsive rss news reader web app tailored for Esri and geo news.
 
 ## How to run the app
 
-`./app` folder has two subfolders
+`app` folder has two subfolders
 
-- `./app/server`
-- `./app/client`
+- `app/server`
+- `app/client`
 
 ### Server
 
