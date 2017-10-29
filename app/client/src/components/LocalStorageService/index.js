@@ -38,8 +38,11 @@ const remove = feed => {
 
 const check = (targetStorageName, feed) => {
   const targetListString = window.localStorage.getItem(targetStorageName);
+  const allStoredFeeds = JSON.parse(targetListString);
+
   return (
-    !!targetListString && targetListString.indexOf(JSON.stringify(feed)) > -1
+    !!targetListString &&
+    allStoredFeeds.some(storedFeed => storedFeed.pubDate === feed.pubDate)
   );
 };
 
